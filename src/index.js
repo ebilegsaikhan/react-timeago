@@ -145,22 +145,22 @@ export default class TimeAgo extends Component<DefaultProps, Props, void> {
     const then = (new Date(this.props.date)).valueOf()
     const now = Date.now()
     const seconds = Math.round(Math.abs(now - then) / 1000)
-    const suffix = then < now ? 'ago' : 'from now'
+    const suffix = then < now ? 'өмнө' : 'дараа'
 
     const [value, unit]
       = seconds < MINUTE
-      ? [Math.round(seconds), 'second']
+      ? [Math.round(seconds), 'секундын']
       : seconds < HOUR
-      ? [Math.round(seconds / MINUTE), 'minute']
+      ? [Math.round(seconds / MINUTE), 'минутын']
       : seconds < DAY
-      ? [Math.round(seconds / HOUR), 'hour']
+      ? [Math.round(seconds / HOUR), 'цагын']
       : seconds < WEEK
-      ? [Math.round(seconds / DAY), 'day']
+      ? [Math.round(seconds / DAY), 'өдрийн']
       : seconds < MONTH
-      ? [Math.round(seconds / WEEK), 'week']
+      ? [Math.round(seconds / WEEK), 'долоо хоногийн']
       : seconds < YEAR
-      ? [Math.round(seconds / MONTH), 'month']
-      : [Math.round(seconds / YEAR), 'year']
+      ? [Math.round(seconds / MONTH), 'сарын']
+      : [Math.round(seconds / YEAR), 'жилийн']
 
     const props = Object.assign({}, this.props)
     props.title = props.title || typeof props.date === 'string'
