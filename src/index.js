@@ -1,15 +1,15 @@
 /* @flow */
 import React, {PropTypes, Component} from 'react'
 
-type Unit = 'second'
-          | 'minute'
-          | 'hour'
-          | 'day'
-          | 'week'
-          | 'month'
-          | 'year'
+type Unit = 'секундын'
+          | 'минутын'
+          | 'цагын'
+          | 'өдрийн'
+          | '7 хоногийн'
+          | 'сарын'
+          | 'жилийн'
 
-type Suffix = 'ago' | 'from now'
+type Suffix = 'өмнө' | 'дараа'
 
 type Props = {
   /** If the component should update itself over time */
